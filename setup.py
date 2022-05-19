@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='u2if',
       version='0.6',
@@ -7,7 +7,8 @@ setup(name='u2if',
       author='execuc',
       author_email='',
       license='MIT',
-      packages=['source/machine'],
+      package_dir={"": "source"},
+      packages=find_packages(where="source"),
       zip_safe=False,
       install_requires=["pyserial>=3.5", "hid>=1.0.4", "micropython-cpython-ustruct==0.0", "micropython-cpython-micropython==0.1.1"])
 
